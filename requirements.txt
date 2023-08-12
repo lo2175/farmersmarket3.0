@@ -7,13 +7,13 @@ pandas
 
 requests
 
-plotly
+#plotly
 
-sendgrid==6.6.0
+#sendgrid==6.6.0
 
 flask # <--- ADD FOR WEB APP
 gunicorn
 
 
 # using this to find and run our tests:
-pytest
+#pytest
