@@ -10,10 +10,10 @@ FLASK_APP=web_app flask run
 
 ## Testing
 
-Run tests:
+#Run tests:
 
-```sh
-pytest
-```
+#```sh
+#pytest
+#```
 
 ## [Deployment Guide](/DEPLOYING.md)
