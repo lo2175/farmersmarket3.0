@@ -3,9 +3,59 @@
 
 {% block content %}
 
-    <h1>Farmers Market Finder</h1>
-
-    <p>This is a paragraph on the "home" page.</p>
+    <<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Local Farmers Market Finder</title>
+    </head>
+    <body>
+    
+    <div class="container mt-5">
+        <h1 class="text-center">Local Farmers Market Finder</h1>
+        <p class="text-center">Built by Lauren Owens</p>
+    
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <h3 class="text-center">Instructions:</h3>
+                <p class="text-center">Enter your city and state to create a list of the farmers markets that are in your local area. All market data is provided by the USDA.</p>
+            </div>
+        </div>
+    
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <form>
+                    <div class="form-group">
+                        <label for="userCity">Enter your city:</label>
+                        <input type="text" class="form-control" id="userCity" placeholder="City">
+                    </div>
+                    <div class="form-group">
+                        <label for="userState">Enter your state two-letter code:</label>
+                        <input type="text" class="form-control" id="userState" placeholder="State">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Search</button>
+                </form>
+            </div>
+        </div>
+    
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="mt-4">
+                    <!-- Here, you can dynamically insert the results using JavaScript or a server-side language -->
+                    <!-- For example: <p>The following farmers markets are available in [city], [state]:</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    </body>
+    </html>
 
 
 {% endblock %}
