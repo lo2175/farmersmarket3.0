@@ -1,13 +1,9 @@
 
-flask
+Flask==2.2.3
 gunicorn
-
-#pandas
-
-#requests
-
-#python-dotenv
-
+python-dotenv
 
 ##For Later:
+#pandas
+#requests
 #pytest
