@@ -9,6 +9,6 @@ def index():
     return render_template("home.html")
 
 @home_routes.route("/seasonality")
-def about():
+def seasonality():
     print("Seasonality...")
     return render_template("seasonality.html")
