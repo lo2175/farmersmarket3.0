@@ -3,16 +3,6 @@
 
 {% block content %}
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <title>Farmers Market Finder</title>
-    </head>
-    <body>
-
     <div class="container mt-5">
         <h1 class="text-center">Farmers Market Finder</h1>
         <p class="text-center">Built by Lauren Owens</p>
@@ -29,29 +19,17 @@
                 <form action="{{ url_for('finder_routes.finder') }}" method="post">
                     <div class="form-group">
                         <label for="userCity">Enter your city:</label>
-                        <input type="text" class="form-control" id="userCity" placeholder="City">
+                        <input type="text" class="form-control" id="userCity" name="userCity" placeholder="New York">
                     </div>
                     <div class="form-group">
                         <label for="userState">Enter your two-letter state code:</label>
-                        <input type="text" class="form-control" id="userState" placeholder="State">
+                        <input type="text" class="form-control" id="userState" name="userState" placeholder="NY">
                     </div>
                     <button type="submit" onClick="finder_routes" class="btn btn-secondary btn-block">Search</button>
                 </form>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-md-6 offset-md-3">
-                <div class="mt-4">
-                <finder_routes class="py"></finder_routes> 
-                </div>
-            </div>
-        </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-</body>
-</html>
 {% endblock %}
