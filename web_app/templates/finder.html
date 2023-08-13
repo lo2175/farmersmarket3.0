@@ -6,15 +6,23 @@
     <div class="container mt-5">
         <h1 class="text-center">Search Results</h1>
 
-        {{ market_list }}
-        <p></p>
-
+        <p>The following farmers markets are available in userCity, userState:</p>
 
         <div class="row mt-4 justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+                    <div class="row row-cols-3">
 
+                        {% for item in market_list %}
+                        <div class="card col" style="width: 18rem; margin:20px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Market Name: market_name</h5>
+                                <p class="card-text">Market Address: market_street market_city, market_state market_zip</p>
+                            </div>
+                        </div>
+                        {% endfor %}
 
+                    </div>
                 </div>
             </div>
         </div>
