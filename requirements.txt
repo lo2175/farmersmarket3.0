@@ -4,7 +4,6 @@ gunicorn
 python-dotenv
 requests
 django
-#pytest
+pandas
 
-##For Later:
-#pandas
+#pytest

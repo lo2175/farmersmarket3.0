@@ -9,21 +9,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <title>Local Farmers Market Finder</title>
+        <title>Farmers Market Finder</title>
     </head>
     <body>
-    
+
     <div class="container mt-5">
-        <h1 class="text-center">Local Farmers Market Finder</h1>
+        <h1 class="text-center">Farmers Market Finder</h1>
         <p class="text-center">Built by Lauren Owens</p>
-    
+
         <div class="row mt-4">
             <div class="col-md-6 offset-md-3">
                 <h3 class="text-center">Instructions:</h3>
                 <p class="text-center">Enter your city and state to create a list of the farmers markets that are in your local area. All market data is provided by the USDA.</p>
             </div>
         </div>
-    
+
         <div class="row mt-4">
             <div class="col-md-6 offset-md-3">
                 <form>
@@ -32,55 +32,26 @@
                         <input type="text" class="form-control" id="userCity" placeholder="City">
                     </div>
                     <div class="form-group">
-                        <label for="userState">Enter your state two-letter code:</label>
+                        <label for="userState">Enter your two-letter state code:</label>
                         <input type="text" class="form-control" id="userState" placeholder="State">
                     </div>
                     <button type="submit" class="btn btn-secondary btn-block">Search</button>
                 </form>
             </div>
         </div>
-    
+
         <div class="row mt-4">
             <div class="col-md-6 offset-md-3">
                 <div class="mt-4">
-                    def farmers_market_finder(request):
-                    if request.method == 'POST':
-                        user_city = request.POST.get('userCity')
-                        user_state = request.POST.get('userState')
-
-                        exported_csv_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR1bQD0eLLXftfkcHn_8bujOYp6jG162KBuBrA59wLMw6MSByA3R1snZm49IyhuF822LcwL6A1ICP_S/pub?output=csv"
-                        df = pd.read_csv(exported_csv_url, on_bad_lines='skip')
-                        filtered_markets = df[(df["market_city"] == user_city) & (df["market_state"] == user_state)]
-
-                        markets = []
-                        if not filtered_markets.empty:
-                            for index, row in filtered_markets.iterrows():
-                                market = {
-                                    "name": row["market_name"],
-                                    "address": f"{row['market_street']}, {row['market_city']}, {row['market_state']} {row['market_zip']}"
-                                }
-                                markets.append(market)
-
-                        context = {
-                            "user_city": user_city,
-                            "user_state": user_state,
-                            "markets": markets
-                        }
-
-                        return render(request, 'farmers_market_finder.html', context)
-
-                    return render(request, 'farmers_market_finder.html')
+                    {# Your Python code here for data processing, but this block should be in a separate script #}
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    </body>
-    </html>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
 {% endblock %}
