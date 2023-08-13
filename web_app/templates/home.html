@@ -43,8 +43,33 @@
         <div class="row mt-4">
             <div class="col-md-6 offset-md-3">
                 <div class="mt-4">
-                    <!-- Here, you can dynamically insert the results using JavaScript or a server-side language -->
-                    <!-- For example: <p>The following farmers markets are available in [city], [state]:</p> -->
+                    def farmers_market_finder(request):
+                    if request.method == 'POST':
+                        user_city = request.POST.get('userCity')
+                        user_state = request.POST.get('userState')
+
+                        exported_csv_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR1bQD0eLLXftfkcHn_8bujOYp6jG162KBuBrA59wLMw6MSByA3R1snZm49IyhuF822LcwL6A1ICP_S/pub?output=csv"
+                        df = pd.read_csv(exported_csv_url, on_bad_lines='skip')
+                        filtered_markets = df[(df["market_city"] == user_city) & (df["market_state"] == user_state)]
+
+                        markets = []
+                        if not filtered_markets.empty:
+                            for index, row in filtered_markets.iterrows():
+                                market = {
+                                    "name": row["market_name"],
+                                    "address": f"{row['market_street']}, {row['market_city']}, {row['market_state']} {row['market_zip']}"
+                                }
+                                markets.append(market)
+
+                        context = {
+                            "user_city": user_city,
+                            "user_state": user_state,
+                            "markets": markets
+                        }
+
+                        return render(request, 'farmers_market_finder.html', context)
+
+                    return render(request, 'farmers_market_finder.html')
                 </div>
             </div>
         </div>

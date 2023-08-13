@@ -3,6 +3,7 @@ Flask==2.2.3
 gunicorn
 python-dotenv
 requests
+django
 #pytest
 
 ##For Later:
