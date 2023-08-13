@@ -1,10 +1,7 @@
+#Test the ability for a state to be received in multiple two digit formats and return the UPPER CASE response.
 
+def test_state():
 
-#def test_to_pct():
-
-    # it formats percent sign, and rounds to two decimal places:
-
-#    assert format_pct(3.65554) == "3.66%"
-
- #   result = format_pct(25.4)
- #   assert result == '25.40%'
+    assert state.upper(oH) == "OH"
+    result = state.upper (oh)
+    assert result == 'OH'
