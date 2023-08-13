@@ -6,7 +6,7 @@
     <div class="container mt-5">
         <h1 class="text-center">Search Results</h1>
 
-        <p>The following farmers markets are available in {{ userCity }}, {{ userState }}:</p>
+        <p>The following farmers markets are available in {{ market['market_city'] }}, {{ market['market_state'] }}:</p>
 
         <div class="row mt-4 justify-content-center">
             <div class="col-md-8">
@@ -16,7 +16,7 @@
                             <li class="list-group-item">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ market['market_name'] }}</h5>
-                                    <p class="card-text">Market Address: 
+                                    <p class="card-text"> 
                                         {{ market['market_street'] }}<br>
                                         {{ market['market_city'] }}, {{ market['market_state'] }} {{ market['market_zip'] }}
                                     </p>
