@@ -5,5 +5,3 @@ python-dotenv
 requests
 pandas
 pytest
-
-###
