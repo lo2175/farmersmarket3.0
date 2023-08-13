@@ -12,7 +12,7 @@
             <div class="col-md-8">
                 <div class="card" style="width: 30rem;">
                     <ul class="list-group list-group-flush">
-                        {% for market in market_list %}
+                        {% for market in market_list[:10] %}
                             <li class="list-group-item">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ market['market_name'] }}</h5>
