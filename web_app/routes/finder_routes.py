@@ -19,17 +19,9 @@ def finder():
     if not filtered_markets.empty:
         print("The following farmers markets are available in", user_city + ",", user_state, ":")
         for index, row in filtered_markets.iterrows():
-           # market_info = {
-            #    "Market Name": row["market_name"],
-             #   "Market Address": f"{row['market_street']}, {row['market_city']} +, {row['market_state']} {row['market_zip']}"
-            #}
-            #market_list.append(market_info)
-            # keep dictionary original keys, we can combine more flexibly into a desired display format on the page
             market_list.append(dict(row))
-            #{'market_name': "Downtown Farmers' Market", 'market_street': 'Corner of Temple St. and Chapel St.', 'market_city': 'New Haven', 'market_state': 'CT', 'market_zip': 6510}
     else:
         market_list.append("No farmers markets found in {} {}".format(user_city, user_state))
         print(f"No farmers markets found in {user_city} {user_state}")
-        # ok to return an empty list. the page can conditionally render a message if list is empty
 
     return render_template("finder.html", market_list=market_list)
