@@ -28,4 +28,3 @@ def finder():
         return render_template("finder.html", market_list=market_list)
     else:
         flash("No markets available in that location. Please enter a different location.")
-        return redirect("/home")  # Redirect to the form page
