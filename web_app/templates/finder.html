@@ -11,19 +11,25 @@
         <div class="row mt-4 justify-content-center">
             <div class="col-md-8">
                 <div class="card" style="width: 20rem;">
-                    <ul class="list-group list-group-flush">
-                        {% for market in market_list[:10] %}
-                            <li class="list-group-item">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ market['market_name'] }}</h5>
-                                    <p class="card-text"> 
-                                        {{ market['market_street'] }}<br>
-                                        {{ market['market_city'] }}, {{ market['market_state'] }} {{ market['market_zip'] }}
-                                    </p>
-                                </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    {% if market_list %}
+                        <ul class="list-group list-group-flush">
+                            {% for market in market_list[:10] %}
+                                <li class="list-group-item">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ market['market_name'] }}</h5>
+                                        <p class="card-text"> 
+                                            {{ market['market_street'] }}<br>
+                                            {{ market['market_city'] }}, {{ market['market_state'] }} {{ market['market_zip'] }}
+                                        </p>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <div class="card-body">
+                            <p class="card-text">No results found, please try another location.</p>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
